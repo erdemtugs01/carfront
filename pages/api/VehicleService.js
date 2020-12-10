@@ -1,4 +1,4 @@
-import { default as axios } from 'axios'
+import axios from 'axios'
 import { CITIZEN_PATH, VEHICLE_PATH, API_URL } from './constants'
 
 async function getAllVehicles() {
@@ -35,4 +35,17 @@ async function getCitizenVehicles(citizen_id) {
   return res
 }
 
-export { getAllVehicles, getVehicle, getCitizenVehicles }
+async function createVehicle(params) {
+  console.log(params)
+  let res
+  try {
+    res = await axios.post(`${API_URL}/${VEHICLE_PATH}`, params)
+  }
+  catch(error) {
+    res = error
+  }
+  console.log(res)
+  return res
+}
+
+export { getAllVehicles, getVehicle, getCitizenVehicles, createVehicle }

@@ -12,7 +12,7 @@ export default function Vehicles() {
     getAllVehicles().then( response => setVehicles(response.data.data) )
     
   }, [])
-  console.log(vehicles)
+
   return (
     <div className={styles.container}>
       <h1>Vehicles Page</h1>
@@ -27,6 +27,7 @@ export default function Vehicles() {
         )}
         </div>
       <h2><Link href="/">Back To Home Page</Link></h2>
+      <h2><Link href="/vehicles/new">Add New Vehicle</Link></h2>
     </div>
   )
 }

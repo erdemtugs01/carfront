@@ -1,4 +1,4 @@
-import { default as axios } from 'axios'
+import axios from 'axios'
 import { CITIZEN_PATH, API_URL } from './constants'
 
 async function getAllCitizen() {

@@ -2,8 +2,6 @@ import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 
 function CitizenLayout({ citizen, vehicles }) {
-  console.log(citizen)
-  console.log(vehicles)
   return (
     <div className={styles.container}>
       <div>
