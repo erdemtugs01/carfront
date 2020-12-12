@@ -7,8 +7,8 @@ import { getVehicleService } from '../api/VehicleServicesService'
 
 export default function Vehicle( { vehicle, service } ) {
   const services = service.data
-  const calculateDate = (param) => {
-    const date = new Date(param)
+  const calculateDate = (rails_date) => {
+    const date = new Date(rails_date)
     const year = date.getFullYear()
     const month = date.getMonth()
     const day = date.getDate()
@@ -19,7 +19,9 @@ export default function Vehicle( { vehicle, service } ) {
     <div className={styles.container}>
       <VehicleLayout vehicle={vehicle.data} />
         {
-          !!services ?
+          services.length === 0 ?
+            <h3>Энэ автомашины үйлчилгээ/засварын мэдээлэл олдсонгүй</h3>
+            :
             <table>
               <tr>
                 <th>Үйлчилгээ/Засварын мэдээлэл</th>
@@ -38,8 +40,7 @@ export default function Vehicle( { vehicle, service } ) {
                 })
               }
             </table>
-            :
-            <h3>Энэ автомашины үйлчилгээ/засварын мэдээлэл олдсонгүй</h3>
+
         }
       <h2><Link href="/">Back To Home Page</Link></h2>
     </div>
