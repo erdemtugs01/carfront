@@ -6,7 +6,7 @@ async function getVehicleService(vehicle_id) {
   try {
     res = await axios.get(`${API_URL}/${VEHICLE_PATH}/${vehicle_id}/${SERVICE_PATH}`)
   }
-  catch {
+  catch(error) {
     res = error
   }
   return res
