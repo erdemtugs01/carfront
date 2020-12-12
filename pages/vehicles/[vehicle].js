@@ -19,7 +19,7 @@ export default function Vehicle( { vehicle, service } ) {
     <div className={styles.container}>
       <VehicleLayout vehicle={vehicle.data} />
         {
-          services ?
+          !!services ?
             <table>
               <tr>
                 <th>Үйлчилгээ/Засварын мэдээлэл</th>
@@ -27,12 +27,12 @@ export default function Vehicle( { vehicle, service } ) {
                 <th>Огноо</th>
               </tr>
               {
-                services.map(service => {
+                services.map(({attributes}) => {
                   return(
-                    <tr key={service.attributes.updated_at}>
-                    <th>{service.attributes.s_type}</th>
-                    <th>{service.attributes.description}</th>
-                    <th>{calculateDate(service.attributes.updated_at)}</th>
+                    <tr key={attributes.updated_at}>
+                    <th>{attributes.s_type}</th>
+                    <th>{attributes.description}</th>
+                    <th>{calculateDate(attributes.updated_at)}</th>
                   </tr>
                   )
                 })
