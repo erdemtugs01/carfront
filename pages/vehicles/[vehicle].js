@@ -34,7 +34,7 @@ export default function Vehicle( { vehicle, service } ) {
                     <tr key={attributes.updated_at}>
                     <th>{attributes.s_type}</th>
                     <th>{attributes.description}</th>
-                    <th>{calculateDate(attributes.updated_at)}</th>
+                    <th>{!!attributes.service_date ? calculateDate(attributes.service_date) : calculateDate(attributes.updated_at)}</th>
                   </tr>
                   )
                 })
